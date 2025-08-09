@@ -34,10 +34,10 @@ jobs:
           sudo apt-get -y install --no-install-recommends libudev-dev libdrm-dev libegl-dev libopengl-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgraphene-1.0-dev
 
       - name: Install
-        run: yarn install
+        run: yarn install --no-immutable
 
       - name: Build
-        run: yarn workspaces foreach --parallel --topological-dev run build
+        run: yarn workspaces foreach --topological-dev run build
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
