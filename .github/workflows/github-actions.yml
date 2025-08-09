@@ -37,7 +37,7 @@ jobs:
         run: yarn install --no-immutable
 
       - name: Build
-        run: yarn workspaces foreach --topological-dev run build
+        run: yarn workspaces foreach --parallel --topological-dev run build
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
